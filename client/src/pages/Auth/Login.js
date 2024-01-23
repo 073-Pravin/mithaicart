@@ -12,12 +12,12 @@ const Login = () => {
 
   const navigate = useNavigate();
   const location = useLocation();
-
+  const route_url= process.env.ROUTE_URL;
   // form function
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {
-      const res = await axios.post("/api/v1/auth/login", {
+      const res = await axios.post(`${route_url}/api/v1/auth/login`, {
         email,
         password,
       });
