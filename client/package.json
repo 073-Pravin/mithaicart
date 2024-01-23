@@ -1,6 +1,6 @@
 {
   "name": "client",
-  "proxy": "https://mithaicart-qsip.vercel.app",
+  "proxy": "http://mithaicart-qsip.vercel.app",
   "version": "0.1.0",
   "private": true,
   "dependencies": {
