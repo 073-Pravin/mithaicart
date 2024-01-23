@@ -12,11 +12,12 @@ const ForgotPasssword = () => {
 
   const navigate = useNavigate();
   const route_url=process.env.ROUTE_URL;
+  console.log(route_url)
   // form function
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {
-      const res = await axios.post(`${route_url}/api/v1/auth/forgot-password`, {
+      const res = await axios.post(`https://mithaicart-qsip.vercel.app/api/v1/auth/forgot-password`, {
         email,
         newPassword,
         answer,
