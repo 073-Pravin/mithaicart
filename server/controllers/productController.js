@@ -22,7 +22,7 @@ export const createProductController = async (req, res) => {
     const { name, description, price, category, quantity, shipping } =
       req.fields;
     const { photo } = req.files;
-    //alidation
+    //validation
     switch (true) {
       case !name:
         return res.status(500).send({ error: "Name is Required" });
@@ -67,7 +67,7 @@ export const getProductController = async (req, res) => {
     const products = await productModel
       .find({})
       .populate("category")
-      .select("-photo")
+      .select("photo")
       .limit(12)
       .sort({ createdAt: -1 });
     res.status(200).send({
@@ -90,7 +90,7 @@ export const getSingleProductController = async (req, res) => {
   try {
     const product = await productModel
       .findOne({ slug: req.params.slug })
-      .select("-photo")
+      .select("photo")
       .populate("category");
     res.status(200).send({
       success: true,
