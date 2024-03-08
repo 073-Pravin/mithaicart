@@ -10,7 +10,7 @@ const Products = () => {
   //getall products
   const getAllProducts = async () => {
     try {
-      const { data } = await axios.get("https://mithaicart-3nna.vercel.app/api/v1/product/get-product");
+      const { data } = await axios.get(`${process.env.REACT_APP_YOUR_BACKEND_URL}/api/v1/product/get-product`);
       setProducts(data.products);
     } catch (error) {
       console.log(error);
